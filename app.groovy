@@ -8,7 +8,6 @@ import org.openqa.selenium.Keys
  
 Browser.drive{
     println "+"*80
-    driver.webClient.javaScriptEnabled = true
     go "http://encodable.com/uploaddemo/"     
     waitFor { title.endsWith("Upload a file") }
     def f = $('#theuploadform')
