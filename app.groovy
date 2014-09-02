@@ -4,17 +4,18 @@
     @Grab("org.seleniumhq.selenium:selenium-support:2.41.0")
 ])
 import geb.Browser
+import org.openqa.selenium.Keys
  
 Browser.drive{
+    println "+"*80
     driver.webClient.javaScriptEnabled = true
     go "http://encodable.com/uploaddemo/"     
     waitFor { title.endsWith("Upload a file") }
     def f = $('#theuploadform')
-    def submit = $('#uploadbutton')
     f.uploadname1 = new File(System.getProperty('user.home'),'Desktop').absolutePath + '/GebDemo.groovy'
     f.subdir1 = '/'
     f.newsubdir1 = 'gebdemo'
-    js.exec('$(\'#theuploadform\').submit()')
-    
+    $('#uploadbutton') << Keys.ENTER
+    println "+"*80
     println "DONE"
 }
