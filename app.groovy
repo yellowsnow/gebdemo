@@ -34,4 +34,6 @@ Browser.drive{
  
     // wait for Google's javascript to redirect to Wikipedia
     waitFor { title == "Wikipedia" }
+    
+    println "DONE"
 }
