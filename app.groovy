@@ -9,10 +9,11 @@ Browser.drive{
     go "http://encodable.com/uploaddemo/"     
     waitFor { title.endsWith("Upload a file") }
     def f = $('#theuploadform')
+    def submit = $('#uploadbutton')
     f.uploadname1 = new File(System.getProperty('user.home'),'Desktop').absolutePath + '/GebDemo.groovy'
     f.subdir1 = '/'
     f.newsubdir1 = 'gebdemo'
-    f.submit()
+    js.exec('$(\'#theuploadform\').submit()')
     
     println "DONE"
 }
