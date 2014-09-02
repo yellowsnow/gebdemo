@@ -14,4 +14,4 @@ before_install:
 branches:
 only:
 - master
-script: groovy app.groovy
+script: groovy -Dgroovy.grape.report.downloads=true app.groovy
