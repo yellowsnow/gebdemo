@@ -6,6 +6,7 @@
 import geb.Browser
  
 Browser.drive{
+    driver.webClient.javaScriptEnabled = true
     go "http://encodable.com/uploaddemo/"     
     waitFor { title.endsWith("Upload a file") }
     def f = $('#theuploadform')
